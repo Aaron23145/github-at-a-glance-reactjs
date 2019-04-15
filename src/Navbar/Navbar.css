@@ -1,0 +1,13 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar__logo {
+  height: 35px;
+  width: auto;
+}
+
+.Navbar__title {
+  margin: 0 15px;
+}

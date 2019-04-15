@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+
+import Navbar from './Navbar/Navbar';
 
 import './App.css';
 
@@ -8,14 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Container>
-          <Row>
-            <Col>
-              Hello, world
-            </Col>
-            <Col>
-              Lorem ipsum
-            </Col>
-          </Row>
+          <Navbar />
         </Container>
       </div>
     );
