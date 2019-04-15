@@ -1,19 +1,24 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../src/index.css';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
+import Navbar from '../src/Navbar/Navbar';
+import LanguagesContainer from '../src/LanguagesContainer/LanguagesContainer';
+import LanguagesItem from '../src/LanguagesContainer/LanguagesItem';
 
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+import JavaScriptLogo from '../src/LanguagesContainer/javascript_logo.png';
+import JavaLogo from '../src/LanguagesContainer/java_logo.svg';
+import HTMLLogo from '../src/LanguagesContainer/html_logo.png';
+import PythonLogo from '../src/LanguagesContainer/python_logo.png';
+
+
+storiesOf('Navbar', module).add('Default', () => <Navbar />);
+storiesOf('LanguagesContainer', module).add('Default', () => <LanguagesContainer />);
+storiesOf('LanguagesItem', module)
+  .add('JavaScript', () => <LanguagesItem logo={JavaScriptLogo} language="JavaScript" />)
+  .add('Java', () => <LanguagesItem logo={JavaLogo} language="Java" />)
+  .add('HTML', () => <LanguagesItem logo={HTMLLogo} language="HTML" />)
+  .add('Python', () => <LanguagesItem logo={PythonLogo} language="Python" />);

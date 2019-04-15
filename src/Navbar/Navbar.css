@@ -1,6 +1,10 @@
 .Navbar {
+  margin: 20px 0;
+
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .Navbar__logo {
@@ -9,5 +13,24 @@
 }
 
 .Navbar__title {
-  margin: 0 15px;
+  margin: 10px 15px;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .Navbar {
+    flex-direction: row;
+  }
+
+  .Navbar__title {
+    margin-top: 0 15px;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .Navbar {
+    margin: 0;
+    justify-content: flex-start;
+  }
 }
