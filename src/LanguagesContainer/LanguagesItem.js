@@ -11,7 +11,7 @@ class LanguagesItem extends Component {
           src={ this.props.logo }
           alt={ this.props.language + ' logo' }
         />
-        <h2 className="LanguagesItem__name">{ this.props.language }</h2>
+        <h3 className="LanguagesItem__name">{ this.props.language }</h3>
       </div>
     );
   }

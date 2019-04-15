@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+
+:root {
+  --darker-light: #E3E6E9;
+}
 
 body {
   font-family: 'Roboto', sans-serif;

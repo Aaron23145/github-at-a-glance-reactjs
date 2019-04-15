@@ -1,4 +1,9 @@
-.LanguagesContainer {
+.LanguagesContainer__title {
+  text-align: center;
+  font-weight: 500;
+}
+
+.LanguagesContainer__Row {
   width: 85%;
   margin: 0 auto;
   justify-content: space-around;

@@ -15,6 +15,7 @@
 .Navbar__title {
   margin: 10px 15px;
   font-size: 1.5rem;
+  font-weight: normal;
 }
 
 @media (min-width: 576px) {

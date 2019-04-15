@@ -30,16 +30,19 @@ class LanguagesContainer extends Component {
     const languagesItems = Object.entries(LANGUAGES).map(language => {
       const [key, value] = language;
       return (
-        <Col md={4} lg={3}>
-          <LanguagesItem logo={value} language={key} key={key} />
+        <Col md={4} lg={3} key={key}>
+          <LanguagesItem logo={value} language={key} />
         </Col>
       );
     });
 
     return (
-      <Row className="LanguagesContainer" as="section">
-        { languagesItems }
-      </Row>
+      <section className="LanguagesContainer">
+        <h2 className="LanguagesContainer__title">Popular Languages</h2>
+        <Row className="LanguagesContainer__Row">
+          { languagesItems }
+        </Row>
+      </section>
     );
   }
 }
