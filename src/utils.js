@@ -19,8 +19,8 @@ export const APP_LANGUAGES = Object.freeze({
   'cpp': { img: CPPLogo, pretty: 'C++' },
 })
 
-const normalSupportedLanguages = Object.keys(APP_LANGUAGES);
-const prettySupportedLanguages = Object.values(APP_LANGUAGES).map(lang => lang.pretty.toLowerCase());
+export const normalSupportedLanguages = Object.keys(APP_LANGUAGES);
+export const prettySupportedLanguages = Object.values(APP_LANGUAGES).map(lang => lang.pretty.toLowerCase());
 
 export function isLanguageSupported(language) {
   const languageLower = language.toLowerCase();
@@ -46,4 +46,17 @@ export function normalFormatLanguage(language) {
   const languageIndex = prettySupportedLanguages.indexOf(languageLower);
 
   return normalSupportedLanguages[languageIndex];
+}
+
+export const API_URL = {
+  'repository': 'https://api.github.com/search/repositories?q=language:Python&sort=stars'
+};
+
+export function getApiUrl(type, value) {
+  switch (type) {
+    case 'repositories':
+      return `https://api.github.com/search/repositories?q=language:${value}&sort=stars`;
+    default:
+      throw new Error('Specified type doesn\'t exist.');
+  }
 }

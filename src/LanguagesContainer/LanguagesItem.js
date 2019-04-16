@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { normalFormatLanguage } from '../utils';
 
 import './LanguagesItem.css';
 
 class LanguagesItem extends Component {
   render() {
+    const {logo, language} = this.props;
+
     return (
-      <div className="LanguagesItem">
-        <img
-          className="LanguagesItem__image"
-          src={ this.props.logo }
-          alt={ this.props.language + ' logo' }
-        />
-        <h3 className="LanguagesItem__name">{ this.props.language }</h3>
-      </div>
+      <Link to={`/lang/${normalFormatLanguage(language)}`}>
+        <div className="LanguagesItem">
+            <img
+              className="LanguagesItem__image"
+              src={ logo }
+              alt={ `${language} logo` }
+            />
+            <h3 className="LanguagesItem__name">{ language }</h3>
+        </div>
+      </Link>
     );
   }
 }
