@@ -9,25 +9,41 @@ import CPPLogo from './LanguagesContainer/cpp_logo.png';
 
 
 export const APP_LANGUAGES = Object.freeze({
-  'JavaScript': JavaScriptLogo,
-  'Java': JavaLogo,
-  'HTML': HTMLLogo,
-  'Python': PythonLogo,
-  'Ruby': RubyLogo,
-  'PHP': PHPLogo,
-  'CSS': CSSLogo,
-  'C++': CPPLogo,
-});
+  'javascript': { img: JavaScriptLogo, pretty: 'JavaScript' },
+  'java': { img: JavaLogo, pretty: 'Java' },
+  'html': { img: HTMLLogo, pretty: 'HTML' },
+  'python': { img: PythonLogo, pretty: 'Python' },
+  'ruby': { img: RubyLogo, pretty: 'Ruby' },
+  'php': { img: PHPLogo, pretty: 'PHP' },
+  'css': { img: CSSLogo, pretty: 'CSS' },
+  'cpp': { img: CPPLogo, pretty: 'C++' },
+})
+
+const normalSupportedLanguages = Object.keys(APP_LANGUAGES);
+const prettySupportedLanguages = Object.values(APP_LANGUAGES).map(lang => lang.pretty.toLowerCase());
 
 export function isLanguageSupported(language) {
-  const supportedLanguages = Object.keys(APP_LANGUAGES).map(lang => lang.toLowerCase());
-  return supportedLanguages.includes(language);
+  const languageLower = language.toLowerCase();
+
+  if (normalSupportedLanguages.includes(languageLower)) return true;
+  if (prettySupportedLanguages.includes(languageLower)) return true;
+
+  return false;
 }
 
-export function formatLanguage(language) {
-  const languagesList = Object.keys(APP_LANGUAGES);
-  const lowercaseLanguages = languagesList.map(lang => lang.toLowerCase());
+export function prettyFormatLanguage(language) {
+  if (!isLanguageSupported(language)) throw new Error('Language is not supported');
 
-  const indexOfLanguage = lowercaseLanguages.indexOf(language.toLowerCase());
-  return languagesList[indexOfLanguage];
+  const languageLower = language.toLowerCase();
+
+  return APP_LANGUAGES[languageLower].pretty;
+}
+
+export function normalFormatLanguage(language) {
+  if (!isLanguageSupported(language)) throw new Error('Language is not supported');
+
+  const languageLower = language.toLowerCase();
+  const languageIndex = prettySupportedLanguages.indexOf(languageLower);
+
+  return normalSupportedLanguages[languageIndex];
 }

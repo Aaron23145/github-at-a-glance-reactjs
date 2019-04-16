@@ -13,7 +13,7 @@ class LanguagesContainer extends Component {
       const [key, value] = language;
       return (
         <Col md={4} lg={3} key={key}>
-          <LanguagesItem logo={value} language={key} />
+          <LanguagesItem logo={value.img} language={value.pretty} />
         </Col>
       );
     });

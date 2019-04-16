@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { isLanguageSupported, formatLanguage } from '../utils';
+import { isLanguageSupported, prettyFormatLanguage } from '../utils';
 
 import './RepoList.css';
 
@@ -11,7 +11,7 @@ class RepoList extends Component {
     if (isLanguageSupported(language)) {
       return (
         <div>
-          Language supported: { formatLanguage(language) }
+          Language supported: { prettyFormatLanguage(language) }
         </div>
       );
     }
