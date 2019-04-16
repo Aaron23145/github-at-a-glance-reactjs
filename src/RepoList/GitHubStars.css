@@ -1,0 +1,10 @@
+.GitHubStars {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.25rem;
+}
+
+.GitHubStars__icon {
+  margin-left: 5px;
+}

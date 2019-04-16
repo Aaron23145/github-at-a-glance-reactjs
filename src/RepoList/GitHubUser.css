@@ -1,0 +1,9 @@
+.GitHubUser {
+  display: flex;
+  align-items: center;
+}
+
+.GitHubUser__img {
+  height: 20px;
+  margin-left: 5px;
+}

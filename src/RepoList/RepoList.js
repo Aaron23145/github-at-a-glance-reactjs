@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'
 
-import { isLanguageSupported, prettyFormatLanguage, getApiUrl } from '../utils';
+import Repository from './Repository';
+import { isLanguageSupported, getApiUrl } from '../utils';
 import { CACHE_REPO_LIST } from '../actions/index';
 
 import './RepoList.css';
@@ -24,18 +25,27 @@ class RepoList extends Component {
   }
 
   render() {
-    if (isLanguageSupported(this.language)) {
+    const repoList = this.props.repoList[this.language]
+
+    if (!isLanguageSupported(this.language)) {
       return (
         <div>
-          Language supported: { prettyFormatLanguage(this.language) }
+          Language { this.language } is not supported.
+        </div>
+      );
+    }
 
+    if (!repoList) {
+      return (
+        <div>
+          Loading...
         </div>
       );
     }
 
     return (
       <div>
-        Language { this.language } is not supported.
+        { repoList.items.map(repo => <Repository repo={repo} key={repo.id} />) }
       </div>
     );
   }
