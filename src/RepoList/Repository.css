@@ -1,8 +1,14 @@
 .Repository {
   align-items: center;
 
-  padding: 20px 40px;
+  padding: 10px 10px;
   margin-bottom: 10px;
+}
+
+.Repository__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .Repository__name,
@@ -19,6 +25,10 @@
 }
 
 @media (min-width: 576px) {
+  .Repository {
+    padding: 20px 40px;
+  }
+
   .Repository__stars {
     margin-top: 0;
   }
