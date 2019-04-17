@@ -44,7 +44,7 @@ class RepoList extends Component {
     return (
       <section className="RepoList">
         <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
-        { repoList.items.map(repo => <Repository repo={repo} key={repo.id} />) }
+        { repoList.items.map((repo, index) => <Repository repo={repo} key={repo.id} index={index} />) }
       </section>
     );
   }
