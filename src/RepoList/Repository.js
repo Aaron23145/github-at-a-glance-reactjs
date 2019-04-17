@@ -12,10 +12,38 @@ class Repository extends Component {
 
     return (
       <Row className="Repository box">
-        <Col xs={6} className="Repository__name">{ name }</Col>
-        <Col xs={4} className="Repository__owner"><GitHubUser user={owner} /></Col>
-        <Col xs={2} className="Repository__stars"><GitHubStars>{ stargazers_count }</GitHubStars></Col>
-        <Col xs={12} className="Repository__description">{ description }</Col>
+        <Col
+          xs={12}
+          md={10}
+          xl={6}
+          className="Repository__name"
+        >
+          { name }
+        </Col>
+        <Col
+          xs={12}
+          md={{ order: 2, span: 12 }}
+          xl={{ order: 1, span: 4 }}
+          className="Repository__owner"
+        >
+          <GitHubUser user={owner} />
+        </Col>
+        <Col
+          xs={{ order: 1, span: 12 }}
+          md={{ order: 1, span: 2 }}
+          xl={{ order: 2, span: 2 }}
+          className="Repository__stars"
+        >
+          <GitHubStars>{ stargazers_count }</GitHubStars>
+        </Col>
+        <Col
+          xs={12}
+          md={{ order: 3, span: 12 }}
+          xl={{ order: 3, span: 12 }}
+          className="Repository__description"
+        >
+          { description }
+        </Col>
       </Row>
     );
   }

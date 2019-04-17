@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import axios from 'axios'
 
 import Repository from './Repository';
-import BackButton from '../BackButton';
 import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../utils';
 import { CACHE_REPO_LIST } from '../actions/index';
 
@@ -45,8 +44,7 @@ class RepoList extends Component {
     }
 
     return (
-      <section>
-        <BackButton />
+      <section className="RepoList">
         <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
         { repoList.items.map(repo => <Repository repo={repo} key={repo.id} />) }
       </section>
