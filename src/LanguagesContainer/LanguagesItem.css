@@ -7,15 +7,7 @@
   justify-content: flex-end;
   align-items: center;
 
-  background: var(--light);
-  border: 2px solid var(--gray);
-  border-radius: 5px;
   color: black;
-  transition: background 1s;
-}
-
-.LanguagesItem:hover {
-  background: var(--darker-light);
 }
 
 .LanguagesItem__image {

@@ -1,16 +1,8 @@
 .Repository {
   align-items: center;
 
-  background: var(--light);
-  border: 2px solid var(--gray);
-  border-radius: 5px;
   padding: 20px 10px;
   margin-bottom: 10px;
-  transition: background 1s;
-}
-
-.Repository:hover {
-  background: var(--darker-light);
 }
 
 .Repository__name {

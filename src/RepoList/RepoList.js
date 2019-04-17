@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import axios from 'axios'
 
 import Repository from './Repository';
-import { isLanguageSupported, getApiUrl } from '../utils';
+import BackButton from '../BackButton';
+import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../utils';
 import { CACHE_REPO_LIST } from '../actions/index';
 
 import './RepoList.css';
@@ -44,9 +45,11 @@ class RepoList extends Component {
     }
 
     return (
-      <div>
+      <section>
+        <BackButton />
+        <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
         { repoList.items.map(repo => <Repository repo={repo} key={repo.id} />) }
-      </div>
+      </section>
     );
   }
 }

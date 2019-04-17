@@ -10,7 +10,7 @@ class LanguagesItem extends Component {
 
     return (
       <Link to={`/lang/${normalFormatLanguage(language)}`}>
-        <div className="LanguagesItem">
+        <div className="LanguagesItem box">
             <img
               className="LanguagesItem__image"
               src={ logo }
