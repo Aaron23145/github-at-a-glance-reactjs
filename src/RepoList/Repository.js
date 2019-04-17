@@ -12,7 +12,7 @@ class Repository extends Component {
     const { name, owner, description, stargazers_count } = this.props.repo
 
     return (
-      <Link to={`${this.props.match.url}/${this.props.index}`}>
+      <Link to={`/repo/${this.props.id}`}>
         <Row className="Repository box">
           <Col
             xs={12}

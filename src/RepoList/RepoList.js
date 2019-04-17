@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios'
 
 import Repository from './Repository';
+import LoadingCircle from '../LoadingCircle';
 import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../utils';
 import { CACHE_REPO_LIST } from '../actions/index';
 
@@ -37,14 +38,14 @@ class RepoList extends Component {
 
     if (!repoList) {
       return (
-        <i className="RepoList__loading-icon fas fa-circle-notch" />
+        <LoadingCircle />
       );
     }
 
     return (
       <section className="RepoList">
         <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
-        { repoList.items.map((repo, index) => <Repository repo={repo} key={repo.id} index={index} />) }
+        { repoList.items.map((repo) => <Repository repo={repo} key={repo.id} id={repo.id} />) }
       </section>
     );
   }

@@ -3,23 +3,3 @@
   margin-left: auto;
   margin-right: auto;
 }
-
-.RepoList__loading-icon {
-  display: flex;
-  justify-content: center;
-
-  margin-top: 100px;
-  font-size: 5rem;
-
-  animation: circle-rotation 1s linear infinite;
-}
-
-@keyframes circle-rotation {
-  from {
-    transform: rotateZ(0deg);
-  }
-
-  to {
-    transform: rotateZ(360deg);
-  }
-}

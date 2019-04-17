@@ -1,0 +1,21 @@
+.LoadingCircle {
+  width: 0;
+  margin: 100px auto 0;
+  text-align: center;
+}
+
+.LoadingCircle__icon {
+  font-size: 5rem;
+  animation: circle-rotation 1s linear infinite;
+}
+
+@keyframes circle-rotation {
+from {
+  transform: rotateZ(0deg);
+}
+
+to {
+  transform: rotateZ(360deg);
+}
+}
+
