@@ -37,9 +37,7 @@ class RepoList extends Component {
 
     if (!repoList) {
       return (
-        <div>
-          Loading...
-        </div>
+        <i className="RepoList__loading-icon fas fa-circle-notch" />
       );
     }
 
