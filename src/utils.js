@@ -48,14 +48,13 @@ export function normalFormatLanguage(language) {
   return normalSupportedLanguages[languageIndex];
 }
 
-export const API_URL = {
-  'repository': 'https://api.github.com/search/repositories?q=language:Python&sort=stars'
-};
 
 export function getApiUrl(type, value) {
   switch (type) {
-    case 'repositories':
+    case 'repoList':
       return `https://api.github.com/search/repositories?q=language:${value}&sort=stars`;
+    case 'repoDetails':
+      return `https://api.github.com/repos/${value}`;
     default:
       throw new Error('Specified type doesn\'t exist.');
   }

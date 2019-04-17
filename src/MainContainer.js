@@ -15,7 +15,7 @@ class MainContainer extends Component {
         <Switch>
           <Route exact path="/" component={LanguagesContainer} />
           <Route exact path="/lang/:language" component={RepoList} />
-          <Route exact path="/repo/:id" component={RepoDetailed} />
+          <Route exact path="/repo/:author/:name" component={RepoDetailed} />
           <Route component={NotFound} />
         </Switch>
       </main>

@@ -9,10 +9,10 @@ import './Repository.css';
 
 class Repository extends Component {
   render() {
-    const { name, owner, description, stargazers_count } = this.props.repo
+    const { name, owner, full_name, description, stargazers_count } = this.props.repo
 
     return (
-      <Link to={`/repo/${this.props.id}`}>
+      <Link to={`/repo/${full_name}`}>
         <Row className="Repository box">
           <Col
             xs={12}
