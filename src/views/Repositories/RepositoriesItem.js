@@ -3,22 +3,22 @@ import { Link, withRouter } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 
 import GitHubUser from './GitHubUser';
-import GitHubStars from './GitHubStars';
+import RepositoriesStars from './RepositoriesStars';
 
-import './Repository.css';
+import './RepositoriesItem.css';
 
-class Repository extends Component {
+class RepositoriesItem extends Component {
   render() {
     const { name, owner, full_name, description, stargazers_count } = this.props.repo
 
     return (
       <Link to={`/repo/${full_name}`}>
-        <Row className="Repository box">
+        <Row className="RepositoriesItem box">
           <Col
             xs={12}
             md={10}
             xl={6}
-            className="Repository__name"
+            className="RepositoriesItem__name"
           >
             { name }
           </Col>
@@ -26,7 +26,7 @@ class Repository extends Component {
             xs={12}
             md={{ order: 2, span: 12 }}
             xl={{ order: 1, span: 4 }}
-            className="Repository__owner"
+            className="RepositoriesItem__owner"
           >
             <GitHubUser user={owner} />
           </Col>
@@ -34,15 +34,15 @@ class Repository extends Component {
             xs={{ order: 1, span: 12 }}
             md={{ order: 1, span: 2 }}
             xl={{ order: 2, span: 2 }}
-            className="Repository__stars"
+            className="RepositoriesItem__stars"
           >
-            <GitHubStars>{ stargazers_count }</GitHubStars>
+            <RepositoriesStars>{ stargazers_count }</RepositoriesStars>
           </Col>
           <Col
             xs={12}
             md={{ order: 3, span: 12 }}
             xl={{ order: 3, span: 12 }}
-            className="Repository__description"
+            className="RepositoriesItem__description"
           >
             { description }
           </Col>
@@ -52,4 +52,4 @@ class Repository extends Component {
   }
 }
 
-export default withRouter(Repository);
+export default withRouter(RepositoriesItem);

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'
 
-import Repository from './Repository';
-import LoadingCircle from '../LoadingCircle';
-import NotFound from '../NotFound';
-import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../utils';
-import { CACHE_REPO_LIST } from '../actions/index';
+import RepositoriesItem from './RepositoriesItem';
+import LoadingCircle from '../../LoadingCircle';
+import NotFound from '../../NotFound';
+import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../../utils';
+import { CACHE_REPO_LIST } from '../../actions/index';
 
-import './RepoList.css';
+import './index.css';
 
-class RepoList extends Component {
+class Repositories extends Component {
   constructor(props) {
     super(props);
     this.language = this.props.match.params.language;
@@ -18,7 +18,7 @@ class RepoList extends Component {
 
   componentDidMount() {
     if (!this.props.repoList[this.language]) {
-      axios.get(getApiUrl('repoList', this.language)).then((res) => {
+      axios.get(getApiUrl('repositories', this.language)).then((res) => {
         this.props.CACHE_REPO_LIST(this.language, res.data);
       }).catch((err) => {
         console.error(err);
@@ -42,9 +42,9 @@ class RepoList extends Component {
     }
 
     return (
-      <section className="RepoList">
+      <section className="Repositories">
         <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
-        { repoList.items.map((repo) => <Repository repo={repo} key={repo.id} />) }
+        { repoList.items.map((repo) => <RepositoriesItem repo={repo} key={repo.id} />) }
       </section>
     );
   }
@@ -55,4 +55,4 @@ function mapStateToProps(state) {
   return { repoList };
 }
 
-export default connect(mapStateToProps, { CACHE_REPO_LIST })(RepoList);
+export default connect(mapStateToProps, { CACHE_REPO_LIST })(Repositories);

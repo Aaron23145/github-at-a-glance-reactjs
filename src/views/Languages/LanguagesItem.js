@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { normalFormatLanguage } from '../utils';
+import { normalFormatLanguage } from '../../utils';
 
 import './LanguagesItem.css';
 

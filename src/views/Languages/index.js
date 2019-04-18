@@ -3,11 +3,11 @@ import { Row, Col } from 'react-bootstrap';
 
 import LanguagesItem from './LanguagesItem';
 
-import { APP_LANGUAGES } from '../utils';
+import { APP_LANGUAGES } from '../../utils';
 
-import './LanguagesContainer.css';
+import './index.css';
 
-class LanguagesContainer extends Component {
+class Languages extends Component {
   render() {
     const languagesItems = Object.entries(APP_LANGUAGES).map(language => {
       const [key, value] = language;
@@ -19,9 +19,9 @@ class LanguagesContainer extends Component {
     });
 
     return (
-      <section className="LanguagesContainer">
-        <h2 className="LanguagesContainer__title">Popular Languages</h2>
-        <Row className="LanguagesContainer__Row">
+      <section className="Languages">
+        <h2 className="Languages__title">Popular Languages</h2>
+        <Row className="Languages__Row">
           { languagesItems }
         </Row>
       </section>
@@ -29,4 +29,4 @@ class LanguagesContainer extends Component {
   }
 }
 
-export default LanguagesContainer;
+export default Languages;

@@ -1,11 +1,11 @@
-import JavaScriptLogo from './LanguagesContainer/javascript_logo.png';
-import JavaLogo from './LanguagesContainer/java_logo.svg';
-import HTMLLogo from './LanguagesContainer/html_logo.png';
-import PythonLogo from './LanguagesContainer/python_logo.png';
-import RubyLogo from './LanguagesContainer/ruby_logo.png';
-import PHPLogo from './LanguagesContainer/php_logo.png';
-import CSSLogo from './LanguagesContainer/css_logo.png';
-import CPPLogo from './LanguagesContainer/cpp_logo.png';
+import JavaScriptLogo from './images/languages/javascript_logo.png';
+import JavaLogo from './images/languages/java_logo.svg';
+import HTMLLogo from './images/languages/html_logo.png';
+import PythonLogo from './images/languages/python_logo.png';
+import RubyLogo from './images/languages/ruby_logo.png';
+import PHPLogo from './images/languages/php_logo.png';
+import CSSLogo from './images/languages/css_logo.png';
+import CPPLogo from './images/languages/cpp_logo.png';
 
 
 export const APP_LANGUAGES = Object.freeze({
@@ -51,9 +51,9 @@ export function normalFormatLanguage(language) {
 
 export function getApiUrl(type, value) {
   switch (type) {
-    case 'repoList':
+    case 'repositories':
       return `https://api.github.com/search/repositories?q=language:${value}&sort=stars`;
-    case 'repoDetails':
+    case 'repository':
       return `https://api.github.com/repos/${value}`;
     default:
       throw new Error('Specified type doesn\'t exist.');

@@ -1,5 +1,6 @@
 .Navbar {
   margin: 20px 0;
+  font-size: 1.5rem;
 }
 
 .Navbar__link {
@@ -9,25 +10,27 @@
   flex-direction: column;
 }
 
-.Navbar__logo {
-  height: 35px;
-  width: auto;
+.Navbar__logo,
+.Navbar__title {
+  font-size: inherit;
 }
 
 .Navbar__title {
   margin: 10px 15px;
-  font-size: 1.5rem;
   font-weight: normal;
 }
 
 @media (min-width: 576px) {
+  .Navbar {
+    font-size: 2rem;
+  }
+
   .Navbar__link {
     flex-direction: row;
   }
 
   .Navbar__title {
     margin-top: 0 15px;
-    font-size: 2rem;
   }
 }
 

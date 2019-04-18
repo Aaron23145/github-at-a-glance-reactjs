@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 
-import LoadingCircle from '../LoadingCircle';
-import { CACHE_REPO_DETAILS } from '../actions/index';
-import { getApiUrl } from '../utils';
+import LoadingCircle from '../../LoadingCircle'
+import { CACHE_REPO_DETAILS } from '../../actions/index';
+import { getApiUrl } from '../../utils';
 
-import './RepoDetailed.css';
+import './index.css';
 
-class RepoDetailed extends Component {
+class Repository extends Component {
   constructor(props) {
     super(props);
 
@@ -19,7 +19,7 @@ class RepoDetailed extends Component {
 
   componentDidMount() {
     if (!(this.fullName in this.props.repoDetails)) {
-      axios.get(getApiUrl('repoDetails', this.fullName)).then((res) => {
+      axios.get(getApiUrl('repository', this.fullName)).then((res) => {
         this.props.CACHE_REPO_DETAILS(this.fullName, res.data)
       }).catch((err) => {
         if (err.response.status === 404) {
@@ -43,7 +43,7 @@ class RepoDetailed extends Component {
     const { name, owner: { login: authorName } } = repo;
 
     return (
-      <div className="RepoDetailed">
+      <div className="Repository">
         <Row>
           <Col>
             <Row>
@@ -68,4 +68,4 @@ function mapStateToProps(state) {
   return { repoDetails };
 }
 
-export default connect(mapStateToProps, { CACHE_REPO_DETAILS })(RepoDetailed);
+export default connect(mapStateToProps, { CACHE_REPO_DETAILS })(Repository);

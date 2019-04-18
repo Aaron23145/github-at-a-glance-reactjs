@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Logo } from './github_icon.svg';
-
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -10,7 +8,7 @@ class Navbar extends Component {
     return (
       <nav className="Navbar">
         <Link to="/" className="Navbar__link">
-          <Logo className="Navbar__logo" />
+          <i className="Navbar__logo fab fa-github" />
           <h1 className="Navbar__title">GitHub at a glance</h1>
         </Link>
       </nav>
