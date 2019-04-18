@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 
 import LoadingCircle from '../LoadingCircle';
@@ -37,10 +38,26 @@ class RepoDetailed extends Component {
       );
     }
 
+    const repo = this.props.repoDetails[this.fullName];
+
+    const { name, owner: { login: authorName } } = repo;
+
     return (
-      <div>
-        { this.props.match.params.author }
-        { this.props.match.params.name }
+      <div className="RepoDetailed">
+        <Row>
+          <Col>
+            <Row>
+              <Col xs={12}>{ name }</Col>
+              <Col xs={12}>
+                <Row>
+                  <Col>Stars</Col>
+                  <Col>Watchers</Col>
+                </Row>
+              </Col>
+            </Row>
+          </Col>
+          <Col>{ authorName }</Col>
+        </Row>
       </div>
     );
   }

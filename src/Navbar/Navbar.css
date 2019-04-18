@@ -1,6 +1,8 @@
 .Navbar {
   margin: 20px 0;
+}
 
+.Navbar__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +21,7 @@
 }
 
 @media (min-width: 576px) {
-  .Navbar {
+  .Navbar__link {
     flex-direction: row;
   }
 
@@ -30,7 +32,7 @@
 }
 
 @media (min-width: 768px) {
-  .Navbar {
+  .Navbar__link {
     margin: 0;
     justify-content: flex-start;
   }
