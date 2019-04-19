@@ -13,16 +13,20 @@ import './index.css';
 class Repositories extends Component {
   constructor(props) {
     super(props);
+
     this.language = this.props.match.params.language;
   }
 
   componentDidMount() {
-    // if (!this.props.repositories[this.language]) {
-      if (!(this.language in this.props.repositories)) {
+    if (!(this.language in this.props.repositories)) {
       axios.get(getApiUrl('repositories', this.language)).then((res) => {
-        this.props.CACHE_REPOSITORIES(this.language, res.data);
+      this.props.CACHE_REPOSITORIES(this.language, res.data);
       }).catch((err) => {
-        console.error(err);
+        if (err.response.status === 403) {
+          this.props.history.replace('/api_limited');
+        } else {
+          console.error(err);
+        }
       });
     }
   }

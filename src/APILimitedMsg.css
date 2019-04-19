@@ -1,0 +1,9 @@
+.APILimitedMsg {
+  text-align: center;
+  color: darkred;
+  font-size: 1.5rem;
+}
+
+.APILimitedMsg__icon {
+  font-size: 3rem;
+}

@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 
 import AuthorContainer from './AuthorContainer';
-import LoadingCircle from '../../LoadingCircle'
+import LoadingCircle from '../../LoadingCircle';
 import { CACHE_REPOSITORY } from '../../actions/index';
 import { getApiUrl } from '../../utils';
 
@@ -25,6 +25,8 @@ class Repository extends Component {
       }).catch((err) => {
         if (err.response.status === 404) {
           this.props.history.replace('/');
+        } else if (err.response.status === 403) {
+          this.props.history.replace('/api_limited');
         } else {
           console.error(err);
         }
