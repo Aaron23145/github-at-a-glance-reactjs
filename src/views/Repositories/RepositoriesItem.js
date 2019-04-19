@@ -12,8 +12,8 @@ class RepositoriesItem extends Component {
     const { name, owner, full_name, description, stargazers_count } = this.props.repo
 
     return (
-      <Link to={`/repo/${full_name}`}>
-        <Row className="RepositoriesItem box">
+      <Link className="RepositoriesItem" to={`/repo/${full_name}`}>
+        <Row noGutters className="RepositoriesItem__container box">
           <Col
             xs={12}
             md={10}

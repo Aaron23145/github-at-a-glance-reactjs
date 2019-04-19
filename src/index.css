@@ -2,6 +2,7 @@
 
 :root {
   --darker-light: #E3E6E9;
+  overflow-y: scroll;
 }
 
 body {
