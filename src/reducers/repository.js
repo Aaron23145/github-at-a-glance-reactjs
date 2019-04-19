@@ -1,6 +1,6 @@
-const repoDetails = (state = {}, action) => {
+const repository = (state = {}, action) => {
   switch (action.type) {
-    case 'CACHE_REPO_DETAILS':
+    case 'CACHE_REPOSITORY':
       return {
         ...state,
         [action.id]: action.data,
@@ -10,4 +10,4 @@ const repoDetails = (state = {}, action) => {
   }
 }
 
-export default repoDetails;
+export default repository;

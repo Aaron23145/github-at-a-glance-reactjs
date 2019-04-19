@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import repoList from './repoList';
-import repoDetails from './repoDetails';
+import repositories from './repositories';
+import repository from './repository';
 
 export default combineReducers({
-  repoList,
-  repoDetails,
+  repositories,
+  repository,
 });

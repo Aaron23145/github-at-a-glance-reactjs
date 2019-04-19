@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import AuthorContainer from './AuthorContainer';
 import LoadingCircle from '../../LoadingCircle'
-import { CACHE_REPO_DETAILS } from '../../actions/index';
+import { CACHE_REPOSITORY } from '../../actions/index';
 import { getApiUrl } from '../../utils';
 
 import './index.css';
@@ -19,9 +19,9 @@ class Repository extends Component {
   }
 
   componentDidMount() {
-    if (!(this.fullName in this.props.repoDetails)) {
+    if (!(this.fullName in this.props.repository)) {
       axios.get(getApiUrl('repository', this.fullName)).then((res) => {
-        this.props.CACHE_REPO_DETAILS(this.fullName, res.data)
+        this.props.CACHE_REPOSITORY(this.fullName, res.data)
       }).catch((err) => {
         if (err.response.status === 404) {
           this.props.history.replace('/');
@@ -33,13 +33,13 @@ class Repository extends Component {
   }
 
   render() {
-    if (!(this.fullName in this.props.repoDetails)) {
+    if (!(this.fullName in this.props.repository)) {
       return (
         <LoadingCircle />
       );
     }
 
-    const repo = this.props.repoDetails[this.fullName];
+    const repo = this.props.repository[this.fullName];
 
     const { name, owner } = repo;
 
@@ -67,8 +67,8 @@ class Repository extends Component {
 }
 
 function mapStateToProps(state) {
-  const { repoDetails } = state;
-  return { repoDetails };
+  const { repository } = state;
+  return { repository };
 }
 
-export default connect(mapStateToProps, { CACHE_REPO_DETAILS })(Repository);
+export default connect(mapStateToProps, { CACHE_REPOSITORY })(Repository);

@@ -6,7 +6,7 @@ import RepositoriesItem from './RepositoriesItem';
 import LoadingCircle from '../../LoadingCircle';
 import NotFound from '../../NotFound';
 import { isLanguageSupported, getApiUrl, prettyFormatLanguage } from '../../utils';
-import { CACHE_REPO_LIST } from '../../actions/index';
+import { CACHE_REPOSITORIES } from '../../actions/index';
 
 import './index.css';
 
@@ -17,9 +17,10 @@ class Repositories extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.repoList[this.language]) {
+    // if (!this.props.repositories[this.language]) {
+      if (!(this.language in this.props.repositories)) {
       axios.get(getApiUrl('repositories', this.language)).then((res) => {
-        this.props.CACHE_REPO_LIST(this.language, res.data);
+        this.props.CACHE_REPOSITORIES(this.language, res.data);
       }).catch((err) => {
         console.error(err);
       });
@@ -27,7 +28,7 @@ class Repositories extends Component {
   }
 
   render() {
-    const repoList = this.props.repoList[this.language]
+    const repositories = this.props.repositories[this.language]
 
     if (!isLanguageSupported(this.language)) {
       return (
@@ -35,7 +36,7 @@ class Repositories extends Component {
       );
     }
 
-    if (!repoList) {
+    if (!repositories) {
       return (
         <LoadingCircle />
       );
@@ -44,15 +45,15 @@ class Repositories extends Component {
     return (
       <section className="Repositories">
         <h2>{ prettyFormatLanguage(this.language) } Popular Repositories</h2>
-        { repoList.items.map((repo) => <RepositoriesItem repo={repo} key={repo.id} />) }
+        { repositories.items.map((repo) => <RepositoriesItem repo={repo} key={repo.id} />) }
       </section>
     );
   }
 }
 
 function mapStateToProps(state) {
-  const { repoList } = state;
-  return { repoList };
+  const { repositories } = state;
+  return { repositories };
 }
 
-export default connect(mapStateToProps, { CACHE_REPO_LIST })(Repositories);
+export default connect(mapStateToProps, { CACHE_REPOSITORIES })(Repositories);

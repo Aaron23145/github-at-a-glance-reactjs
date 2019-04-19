@@ -1,11 +1,11 @@
-export const CACHE_REPO_LIST = (language, data) => ({
-  type: 'CACHE_REPO_LIST',
+export const CACHE_REPOSITORIES = (language, data) => ({
+  type: 'CACHE_REPOSITORIES',
   lang: language,
   data,
 })
 
-export const CACHE_REPO_DETAILS = (id, data) => ({
-  type: 'CACHE_REPO_DETAILS',
+export const CACHE_REPOSITORY = (id, data) => ({
+  type: 'CACHE_REPOSITORY',
   id,
   data,
 })
