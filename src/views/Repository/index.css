@@ -1,3 +1,27 @@
 .Repository {
   width: 85%;
 }
+
+.Repository__left-container {
+  margin-right: 20px;
+}
+
+.Repository__author-container {
+  margin-left: 20px;
+}
+
+.Repository__sw-container {
+  margin-top: 10px;
+}
+
+.Repository__name {
+  margin-bottom: 10px;
+}
+
+.Repository__stars {
+  margin-right: 5px;
+}
+
+.Repository__watchers {
+  margin-left: 5px;
+}

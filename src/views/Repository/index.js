@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 
+import AuthorContainer from './AuthorContainer';
 import LoadingCircle from '../../LoadingCircle'
 import { CACHE_REPO_DETAILS } from '../../actions/index';
 import { getApiUrl } from '../../utils';
@@ -40,23 +41,25 @@ class Repository extends Component {
 
     const repo = this.props.repoDetails[this.fullName];
 
-    const { name, owner: { login: authorName } } = repo;
+    const { name, owner } = repo;
 
     return (
       <div className="Repository">
         <Row>
-          <Col>
+          <Col className="Repository__left-container">
             <Row>
-              <Col xs={12}>{ name }</Col>
-              <Col xs={12}>
+              <Col xs={12} className="Repository__name box">{ name }</Col>
+              <Col xs={12} className="Repository__sw-container">
                 <Row>
-                  <Col>Stars</Col>
-                  <Col>Watchers</Col>
+                  <Col className="Repository__stars box">Stars</Col>
+                  <Col className="Repository__watchers box">Watchers</Col>
                 </Row>
               </Col>
             </Row>
           </Col>
-          <Col>{ authorName }</Col>
+          <Col className="Repository__author-container box">
+            <AuthorContainer author={owner} />
+          </Col>
         </Row>
       </div>
     );

@@ -1,0 +1,25 @@
+.AuthorContainer {
+  width: 100%;
+  height: 100%;
+  margin: 20px 0;
+}
+
+.AuthorContainer__name,
+.AuthorContainer__link-icon {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AuthorContainer__name {
+  font-size: 2rem;
+}
+
+.AuthorContainer__link-icon {
+  font-size: 3rem;
+}
+
+.AuthorContainer__avatar {
+  width: 100%;
+}
