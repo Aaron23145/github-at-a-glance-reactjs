@@ -1,44 +1,6 @@
 .Repository {
   width: 85%;
-}
-
-.Repository__left-container {
-  margin-right: 20px;
-}
-
-.Repository__author-container {
-  margin-left: 20px;
-}
-
-.Repository__sw-container {
-  margin-top: 10px;
-}
-
-.Repository__name-lang {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-}
-
-.Repository__stars,
-.Repository__issues {
-  margin-right: 5px;
-}
-
-.Repository__watchers,
-.Repository__forks {
-  margin-left: 5px;
-}
-
-.Repository__forks,
-.Repository__issues {
-  margin-top: 10px;
-}
-
-.Repository__stars,
-.Repository__watchers,
-.Repository__issues,
-.Repository__forks {
-  font-size: 2rem;
+  margin: 0 auto;
 }
 
 .Repository__name-lang__link {
@@ -49,4 +11,23 @@
   margin: 20px -15px;
   padding: 20px 10px;
   font-size: 1.3rem;
+}
+
+.Repository__name-lang {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .Repository__name-lang {
+    font-size: 1.5rem;
+  }  
+}
+
+@media (min-width: 992px) {  
+  .Repository__stars,
+  .Repository__watchers,
+  .Repository__issues,
+  .Repository__forks {
+    font-size: 1.5rem;
+  }  
 }

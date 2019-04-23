@@ -1,7 +1,11 @@
 .AuthorContainer {
   width: 100%;
   height: 100%;
-  margin: 20px 0;
+  padding: 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .AuthorContainer__name,
@@ -13,11 +17,21 @@
 }
 
 .AuthorContainer__name {
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .AuthorContainer__link-icon {
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  .AuthorContainer__name {
+    font-size: 2rem;
+  }
+  
+  .AuthorContainer__link-icon {
+    font-size: 3rem;
+  }  
 }
 
 .AuthorContainer__avatar {

@@ -58,45 +58,42 @@ class Repository extends Component {
     return (
       <div className="Repository">
         <Row>
-          <Col className="Repository__left-container">
+          <Col xs={12} sm={5} className="Repository__left-container">
             <Row>
-              <Col xs={12} className="Repository__name-lang box text-center">
+              <Col className="Repository__name-lang box text-center">
                 <a href={html_url} target="_blank" rel="noreferrer noopener" className="Repository__name-lang__link">
                   { name } ({ language }) <i className="fas fa-link" />
                 </a>
               </Col>
-              <Col xs={12} className="Repository__sw-container">
-                <Row>
-                  <Col className="Repository__stars box">
-                    <div className="d-flex justify-content-between align-items-center">
-                      { stars }
-                      <i className="fas fa-star" />
-                    </div>
-                  </Col>
-                  <Col className="Repository__watchers box">
-                    <div className="d-flex justify-content-between align-items-center">
-                      { watchers }
-                      <i className="fas fa-eye" />
-                    </div>
-                  </Col>
-                  <div className="w-100" />
-                  <Col className="Repository__issues box">
-                    <div className="d-flex justify-content-between align-items-center">
-                      { issues }
-                      <i className="fas fa-exclamation-circle" />
-                    </div>
-                  </Col>
-                  <Col className="Repository__forks box">
-                    <div className="d-flex justify-content-between align-items-center">
-                      { forks }
-                      <i className="fas fa-code-branch" />
-                    </div>
-                  </Col>
-                </Row>
+              <div className="w-100" />
+              <Col xs={5} sm={12} md={5} className="Repository__stars box mt-2">
+                <div className="d-flex justify-content-between align-items-center">
+                  { stars }
+                  <i className="fas fa-star" />
+                </div>
+              </Col>
+              <Col xs={5} sm={12} md={5} className="Repository__watchers box mt-2 ml-auto">
+                <div className="d-flex justify-content-between align-items-center">
+                  { watchers }
+                  <i className="fas fa-eye" />
+                </div>
+              </Col>
+              <div className="w-100" />
+              <Col xs={5} sm={12} md={5} className="Repository__issues box mt-2">
+                <div className="d-flex justify-content-between align-items-center">
+                  { issues }
+                  <i className="fas fa-exclamation-circle" />
+                </div>
+              </Col>
+              <Col xs={5} sm={12} md={5} className="Repository__forks box mt-2 ml-auto">
+                <div className="d-flex justify-content-between align-items-center">
+                  { forks }
+                  <i className="fas fa-code-branch" />
+                </div>
               </Col>
             </Row>
           </Col>
-          <Col className="Repository__author-container box">
+          <Col xs={12} sm={5} className="Repository__author-container box ml-auto mt-2 mt-sm-0">
             <AuthorContainer author={owner} />
           </Col>
         </Row>
