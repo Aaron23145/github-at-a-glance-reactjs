@@ -1,5 +1,5 @@
 .LoadingCircle {
-  width: 0;
+  width: 100px;
   margin: 100px auto 0;
   text-align: center;
 }
