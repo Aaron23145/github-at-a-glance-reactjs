@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/github-at-a-glance-reactjs/static/media/fa-regular-400.dcce4b7f.eot"
   },
   {
-    "revision": "72e884d327bfd78419e0",
-    "url": "/github-at-a-glance-reactjs/static/css/main.7d697b6b.chunk.css"
+    "revision": "45e1c442be04a539024b",
+    "url": "/github-at-a-glance-reactjs/static/css/main.d947b432.chunk.css"
   },
   {
     "revision": "566cf107f45ef9c3f65d",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/github-at-a-glance-reactjs/static/media/fa-regular-400.427d721b.woff"
   },
   {
-    "revision": "72e884d327bfd78419e0",
+    "revision": "45e1c442be04a539024b",
     "url": "/github-at-a-glance-reactjs/static/js/main.f05726a5.chunk.js"
   },
   {
@@ -76,24 +76,24 @@ self.__precacheManifest = [
     "url": "/github-at-a-glance-reactjs/static/media/fa-solid-900.a7140145.woff"
   },
   {
-    "revision": "a7b95dbdd87e0c809570affaf366a434",
-    "url": "/github-at-a-glance-reactjs/static/media/fa-brands-400.a7b95dbd.eot"
-  },
-  {
     "revision": "98b6db59be947f563350d2284fc9ea36",
     "url": "/github-at-a-glance-reactjs/static/media/fa-brands-400.98b6db59.ttf"
+  },
+  {
+    "revision": "a7b95dbdd87e0c809570affaf366a434",
+    "url": "/github-at-a-glance-reactjs/static/media/fa-brands-400.a7b95dbd.eot"
   },
   {
     "revision": "5eb754ab7dbd2fee562360528db4c3c0",
     "url": "/github-at-a-glance-reactjs/static/media/fa-regular-400.5eb754ab.svg"
   },
   {
-    "revision": "46e7cec623d8bd790d9fdbc8de2d3ee7",
-    "url": "/github-at-a-glance-reactjs/static/media/fa-solid-900.46e7cec6.eot"
-  },
-  {
     "revision": "ff8d9f8adb0d09f11d4816a152672f53",
     "url": "/github-at-a-glance-reactjs/static/media/fa-solid-900.ff8d9f8a.ttf"
+  },
+  {
+    "revision": "46e7cec623d8bd790d9fdbc8de2d3ee7",
+    "url": "/github-at-a-glance-reactjs/static/media/fa-solid-900.46e7cec6.eot"
   },
   {
     "revision": "5bf145531213545e03ff41cd27df7d2b",
@@ -104,7 +104,7 @@ self.__precacheManifest = [
     "url": "/github-at-a-glance-reactjs/static/css/2.49f5fd20.chunk.css"
   },
   {
-    "revision": "92eec047cbc89d48970a40c6216d7bcb",
+    "revision": "23a937e51b8992c01118aa702996d55d",
     "url": "/github-at-a-glance-reactjs/index.html"
   }
 ];
