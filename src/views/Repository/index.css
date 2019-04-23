@@ -14,14 +14,39 @@
   margin-top: 10px;
 }
 
-.Repository__name {
+.Repository__name-lang {
   margin-bottom: 10px;
+  font-size: 1.5rem;
 }
 
-.Repository__stars {
+.Repository__stars,
+.Repository__issues {
   margin-right: 5px;
 }
 
-.Repository__watchers {
+.Repository__watchers,
+.Repository__forks {
   margin-left: 5px;
+}
+
+.Repository__forks,
+.Repository__issues {
+  margin-top: 10px;
+}
+
+.Repository__stars,
+.Repository__watchers,
+.Repository__issues,
+.Repository__forks {
+  font-size: 2rem;
+}
+
+.Repository__name-lang__link {
+  margin: 0 -15px;
+}
+
+.Repository__description {
+  margin: 20px -15px;
+  padding: 20px 10px;
+  font-size: 1.3rem;
 }
