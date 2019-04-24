@@ -1,6 +1,6 @@
 # GitHub at a Glance
 
-SPA that consumes the GitHub's API. It allows you to quickly see which are the most popular repositories and all their related information.
+SPA that consumes the GitHub's API. It allows you to quickly see which are the most popular repositories and all their related information. Try it live in [The GitHub Pages](https://aaron23145.github.io/github-at-a-glance-reactjs/).
 
 ## Install
 
